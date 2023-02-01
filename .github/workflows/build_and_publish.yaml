@@ -23,6 +23,11 @@ jobs:
         with:
           repository: 'mlflow/mlflow'
           ref: 'v2.1.1'
+          path: './upstream'
+      
+      - name: Move edited Dockerfile
+        run: |
+          cp ./Dockerfile ./upstream/Dockerfile
 
       - name: Set up Docker Buildx
         id: buildx
